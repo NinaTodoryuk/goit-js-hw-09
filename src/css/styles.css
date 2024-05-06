@@ -13,8 +13,8 @@ body {
   flex-direction: column;
   gap: 16px;
   height: 650px;
-  align-items: center;
-  justify-content: center;
+  /*align-items: center;
+  justify-content: center;*/
 }
 
 
