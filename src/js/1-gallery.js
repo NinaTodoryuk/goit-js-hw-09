@@ -73,11 +73,16 @@ const galleryContainer = document.querySelector('.gallery');
 
 const markup = images.reduce((html, image) => {
   html += `
-    <img 
-      src="${image.preview}" 
-      data-source="${image.original}" 
-      alt="${image.description}" 
-    />
+  <li class="gallery-item">
+    <a class="gallery-link" href="${image.original}">
+      <img 
+        class="gallery-image"
+        src="${image.preview}"
+        data-source="${image.original}"
+        alt="${image.description}" 
+      />
+    </a>
+  </li>
   `;
   return html;
 }, '');
@@ -86,7 +91,7 @@ galleryContainer.innerHTML = markup;
 
 
 // Ініціалізація SimpleLightbox
-const lightbox = new SimpleLightbox('.gallery img', {
+const lightbox = new SimpleLightbox('.gallery a', {
   disableScroll: true,
   overlay: false,
   captionsData: 'alt',
